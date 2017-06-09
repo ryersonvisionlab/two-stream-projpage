@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="home-content">
+    <div class="abstract-wrapper">
+      <h2 class="header abstract-header">Abstract</h2>
+      <p>We introduce a two-stream model for dynamic texture synthesis. Our model is based on pre-trained convolutional networks (ConvNets) that target two independent tasks: (i) object recognition, and (ii) optical flow prediction. Given an input dynamic texture, statistics of filter responses from the object recognition ConvNet encapsulates the per frame appearance of the input texture, while statistics of filter responses from the optical flow ConvNet models its dynamics. To generate a novel texture, a noise input sequence is optimized to simultaneously match the feature statistics from each stream of the example texture. Inspired by recent work on image style transfer and enabled by the two-stream model, we also apply the synthesis approach to combine the texture appearance from one texture with the dynamics of another to generate entirely novel dynamic textures. We show that our approach generates novel, high quality samples that match both the framewise appearance and temporal evolution of an input example.</p>
+    </div>
+    <div class="material-wrapper">
+      <h2 class="header material-header">Material</h2>
+      <div class="pdf">
+        <a href="pdf/twostreamconv.pdf"><img src="" alt="Two-Stream Convolutional Networks for Dynamic Texture Synthesis"></a>
+      </div>
+      <div class="pdf">
+        <a href="pdf/twostreamconvposter.pdf"><img src="" alt="Poster for Two-Stream Convolutional Networks for Dynamic Texture Synthesis"></a>
+      </div>
+    </div>
+    <div class="author-col-wrapper">
+      <h2 class="header author-header">Authors</h2>
+      <div class="author-col author-col-1">{% include profile.html profile_image="mat.jpg" name="Matthew Tesfaldet" email="mtesfald@eecs.yorku.ca" twitter="mtesfald" github="tesfaldet" website="http://mtesfaldet.net/" %}</div>
+      <div class="author-col author-col-2">{% include profile.html profile_image="kosta.jpg" name="Konstantinos G. Derpanis" email="kosta@scs.ryerson.ca" twitter="CSProfKGD" website="http://www.scs.ryerson.ca/~kosta/" %}</div>
+      <div class="author-col author-col-3">{% include profile.html profile_image="mab.png" name="Marcus A. Brubaker" email="mab@eecs.yorku.ca" twitter="marcusabrubaker" github="mbrubake" website="http://www.eecs.yorku.ca/~mab/"%}</div>
+    </div>
+    <div class="dyntexsynth-wrapper">
+      <h2 class="header dyntexsynth-header">Dynamic Texture Synthesis</h2>
+    </div>
+    <div class="dynstytrans-wrapper">
+      <h2 class="header dynstytrans-header">Dynamics Style Transfer</h2>
+    </div>
+    <div class="citation-wrapper">
+      <h2 class="header citation-header">Citation</h2>
+      {% capture my_include %}{% include citation.md %}{% endcapture %}{{ my_include | markdownify }}
+    </div>
+  </div>
+</div>

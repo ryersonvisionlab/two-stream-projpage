@@ -1,0 +1,20 @@
+<a href="{{ include.website }}"><img class="profile" src="{{ site.baseurl }}/img/{{ include.profile_image }}"/>
+  <span>{{ include.name }}</span>
+</a>
+<ul class="social-media-list">
+  {% if include.github %}
+  <li>
+    {% include icon-github.html username=include.github %}
+  </li>
+  {% endif %}
+  {% if include.twitter %}
+  <li>
+    {% include icon-twitter.html username=include.twitter %}
+  </li>
+  {% endif %}
+  {% if include.email %}
+  <li>
+    {% include icon-mail.html email=include.email %}
+  </li>
+  {% endif %}
+</ul>
