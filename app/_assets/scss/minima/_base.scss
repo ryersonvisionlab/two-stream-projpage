@@ -126,11 +126,11 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: $brand-color;
+  color: darken($brand-color, 15%);
   text-decoration: none;
 
   &:visited {
-    color: darken($brand-color, 15%);
+    color: lighten($brand-color, 5%);
   }
 
   &:hover {
@@ -258,6 +258,7 @@ pre {
   width: 20%;
   margin-right: $spacing-unit;
   text-align: center;
+  font-size: 15px;
 
   img {
     display: block;
@@ -281,6 +282,14 @@ pre {
     svg {
       width: 100%;
       height: auto;
+      @include transition(transform 0.2s, -ms-transform 0.2s, -webkit-transform 0.2s);
+
+      &:hover {
+        transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        z-index: 2;
+      }
     }
   }
 }
