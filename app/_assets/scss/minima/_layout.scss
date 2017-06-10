@@ -114,7 +114,6 @@
  */
 .author-col-wrapper {
   @extend %clearfix;
-  padding-top: $spacing-unit;
 }
 
 .author-col {
@@ -145,6 +144,17 @@
   display: block;
   margin: 0 auto;
   margin-bottom: $spacing-unit / 3;
+  box-shadow: 0 0 10px $grey-color;
+
+  @include transition(transform 0.2s, -ms-transform 0.2s, -webkit-transform 0.2s, box-shadow 0.2s);
+
+  &:hover {
+    transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    box-shadow: 0 0 15px $grey-color;
+    z-index: 2;
+  }
 
 
   @include media-query($on-laptop) {
