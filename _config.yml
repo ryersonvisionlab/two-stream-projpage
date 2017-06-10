@@ -19,6 +19,8 @@ description: > # this means to ignore newlines until "baseurl:"
   The project page for the paper "Two-Stream Convolutional Networks for Dynamic Texture Synthesis"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+disqus:
+  shortname: two-stream-dyntex-synth
 
 # Build settings
 markdown: kramdown
