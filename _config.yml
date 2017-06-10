@@ -21,6 +21,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ryersonvisionlab.github.io/two-stream-projpage/" # the base hostname & protocol for your site, e.g. http://example.com
 disqus:
   shortname: two-stream-dyntex-synth
+google_analytics: UA-74037692-2
 
 # Build settings
 markdown: kramdown
