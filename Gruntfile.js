@@ -6,6 +6,9 @@ module.exports = function(grunt) {
     // Load all Grunt tasks
     require('jit-grunt')(grunt);
 
+    // require build control
+    grunt.loadNpmTasks('grunt-build-control');
+
     grunt.initConfig({
         app: {
             source: 'app',
