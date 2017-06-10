@@ -273,4 +273,14 @@ pre {
       z-index: 2;
     }
   }
+
+  .icon {
+    display: block;
+    margin-bottom: $spacing-unit / 3;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
 }

@@ -121,6 +121,10 @@
   color: $grey-color;
   text-align: center;
   float: left;
+
+  .social-media-list svg {
+      width: 16px;
+  }
 }
 
 .author-col-1 {
