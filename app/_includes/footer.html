@@ -1,17 +1,7 @@
 <footer class="site-footer">
-
   <div class="wrapper">
-
-    <h2 class="footer-heading">Comments</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col">
-        {% if site.disqus.shortname %}
-          {% include disqus_comments.html %}
-        {% endif %}
-      </div>
-    </div>
-
+    {% if site.disqus.shortname %}
+      {% include disqus_comments.html %}
+    {% endif %}
   </div>
-
 </footer>
