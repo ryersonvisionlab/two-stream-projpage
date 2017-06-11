@@ -31,6 +31,28 @@ layout: default
     </div>
     <div class="dyntexsynth-wrapper">
       <h2 class="header dyntexsynth-header">Dynamic Texture Synthesis</h2>
+      <p>We applied our dynamic texture synthesis process to a wide range of textures which were selected from the <a href="http://dyntex.univ-lr.fr/database.html">DynTex</a> database as well as others collected in-the-wild. Here we provide synthesized results of over 50 different textures that encapsulate a range of phenomena, such as flowing water, waves, clouds, fire, rippling flags, waving plants, and schools of fish.</p>
+      <p>The top row consists of the target dynamic textures while the bottom row consists of the synthesized dynamic textures. Scroll horizontally to view more.</p>
+      <p><strong>Click on a thumbnail to play the dynamic texture.</strong></p>
+      <h3>Success cases</h3>
+      <p>Inputs which follow the underlying assumption of a dynamic texture, i.e., the appearance and/or dynamics are more-or-less spatially/temporally homogeneous, allow for better synthesized results.</p>
+      <div class="texture-wrapper">
+        {% include texture_comparison.html name="ants" target="dynamic_texture_synthesis/target/ants.mp4" synthesized="dynamic_texture_synthesis/output/ants_output.mp4" %}
+        {% include texture_comparison.html name="birds" target="dynamic_texture_synthesis/target/birbs.mp4" synthesized="dynamic_texture_synthesis/output/birbs_output.mp4" %}
+        {% include texture_comparison.html name="boiling_water_1" target="dynamic_texture_synthesis/target/boiling_water_1.mp4" synthesized="dynamic_texture_synthesis/output/boiling_water_1_output.mp4" %}
+        {% include texture_comparison.html name="boiling_water_2" target="dynamic_texture_synthesis/target/boiling_water_2.mp4" synthesized="dynamic_texture_synthesis/output/boiling_water_2_output.mp4" %}
+        {% include texture_comparison.html name="calm_water" target="dynamic_texture_synthesis/target/calm_water.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_output.mp4" %}
+        {% include texture_comparison.html name="calm_water_2" target="dynamic_texture_synthesis/target/calm_water_2.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_2_output.mp4" %}
+        {% include texture_comparison.html name="calm_water_3" target="dynamic_texture_synthesis/target/calm_water_3.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_3_output.mp4" %}
+        {% include texture_comparison.html name="calm_water_4" target="dynamic_texture_synthesis/target/calm_water_4.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_4_output.mp4" %}
+        {% include texture_comparison.html name="calm_water_5" target="dynamic_texture_synthesis/target/calm_water_5.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_5_output.mp4" %}
+        {% include texture_comparison.html name="fish" target="dynamic_texture_synthesis/target/fish.mp4" synthesized="dynamic_texture_synthesis/output/fish_output.mp4" %}
+      </div>
+      <h3>Failure cases</h3>
+      <p>Inputs which do not follow the underlying assumption of a dynamic texture result in subpar synthesized dynamic textures.</p>
+      <div class="texture-wrapper">
+        {% include texture_comparison.html name="candle_flame" target="dynamic_texture_synthesis/target/candle_flame.mp4" synthesized="dynamic_texture_synthesis/output/candle_flame_output.mp4" %}
+      </div>
     </div>
     <div class="dynstytrans-wrapper">
       <h2 class="header dynstytrans-header">Dynamics Style Transfer</h2>

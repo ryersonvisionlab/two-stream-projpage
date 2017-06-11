@@ -100,11 +100,6 @@
  */
 .abstract-wrapper {
   @extend %clearfix;
-
-  p {
-    margin: 0;
-    text-align: justify;
-  }
 }
 
 
@@ -167,5 +162,46 @@
 
   @include media-query($on-palm) {
     width: 40%;
+  }
+}
+
+
+
+/**
+ * Dynamic Texture Synthesis display
+ */
+.dyntexsynth-wrapper{
+  p {
+    margin-bottom: $spacing-unit / 2;
+  }
+}
+
+
+
+/**
+ * Texture display
+ */
+.texture-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+
+  &:first-of-type {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.texture-comparison {
+  display: inline-block;
+  text-align: center;
+  margin-right: $spacing-unit / 3;
+
+  video {
+    display: block;
+  }
+
+  video:first-of-type {
+    margin-bottom: $spacing-unit / 3;
   }
 }
