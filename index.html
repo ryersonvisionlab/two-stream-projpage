@@ -14,11 +14,11 @@
           <div class=texture-comparison>
   <h4>birds</h4>
   <video loop controls onclick=this.paused?this.play():this.pause()>
-    <source src=textures/dynamic_texture_synthesis/target/birbs.mp4 type=video/mp4>
+    <source src=textures/dynamic_texture_synthesis/target/birds.mp4 type=video/mp4>
     Your browser does not support the video tag.
   </video>
   <video loop controls onclick=this.paused?this.play():this.pause()>
-    <source src=textures/dynamic_texture_synthesis/output/birbs_output.mp4 type=video/mp4>
+    <source src=textures/dynamic_texture_synthesis/output/birds_output.mp4 type=video/mp4>
     Your browser does not support the video tag.
   </video>
 </div>
@@ -295,18 +295,6 @@
   </video>
   <video loop controls onclick=this.paused?this.play():this.pause()>
     <source src=textures/dynamic_texture_synthesis/output/water_5_output.mp4 type=video/mp4>
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-          <div class=texture-comparison>
-  <h4>waterfall</h4>
-  <video loop controls onclick=this.paused?this.play():this.pause()>
-    <source src=textures/dynamic_texture_synthesis/target/waterfall.mp4 type=video/mp4>
-    Your browser does not support the video tag.
-  </video>
-  <video loop controls onclick=this.paused?this.play():this.pause()>
-    <source src=textures/dynamic_texture_synthesis/output/waterfall_output.mp4 type=video/mp4>
     Your browser does not support the video tag.
   </video>
 </div>
@@ -629,6 +617,18 @@
   </video>
 </div>
 
+          <div class=texture-comparison>
+  <h4>waterfall</h4>
+  <video loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamic_texture_synthesis/target/waterfall.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+  <video loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamic_texture_synthesis/output/waterfall_output.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+</div>
+
         </pre>
       </div>
     </div>
@@ -769,10 +769,12 @@
     </div>
     <div class="wrapper dynstytrans-wrapper">
       <h2 class="header dynstytrans-header">Dynamics Style Transfer</h2>
-      <p>The underlying assumption of our model is that the appearance and dynamics of a dynamic texture can be factorized. As such, it should allow for the transfer of the dynamics of one texture onto the appearance of another. This has been explored previously for <a href=https://arxiv.org/abs/1508.06576>artistic style transfer</a> with static imagery. We accomplish this with our model by performing the same optimization as above, but with the target Gram matrices for appearance and dynamics computed from different textures.</p>
+      <p>The underlying assumption of our model is that the appearance and dynamics of a dynamic texture can be factorized. As such, it should allow for the transfer of the dynamics of one texture onto the appearance of another. This has been explored previously for <a href=https://arxiv.org/abs/1508.06576>artistic style transfer</a> with static imagery. We accomplish this with our model by performing the same optimization as usual, but with the target Gram matrices for appearance and dynamics computed from different textures. In effect, the static texture is animated and hence brought to life. To the best of our
+knowledge, we are the first to demonstrate this form of style transfer.</p>
+      <p>The top row consists of the appearance target, the second row the dynamics target, and the third row the synthesized result.</p>
       <div class=highlighter-rouge>
         <pre class="highlighter wrapper texture-wrapper">
-          <div class=dynamics-style-transfer>
+          <div class=dynamics-style-transfer-1>
   <h4>calm_water_3_to_water_paint_1</h4>
   <img src=img/water_paint_1.jpeg alt="Appearance target">
   <video loop controls onclick=this.paused?this.play():this.pause()>
@@ -780,7 +782,140 @@
     Your browser does not support the video tag.
   </video>
   <video loop controls onclick=this.paused?this.play():this.pause()>
-    <source src=textures/dynamics_style_transfer/calm_water_3_to_water_paint_1/calm_water_3_to_water_paint_1.mp4 type=video/mp4>
+    <source src=textures/dynamics_style_transfer/1/calm_water_3_to_water_paint_1.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+          <div class=dynamics-style-transfer-1>
+  <h4>fireplace_1_to_fire_paint</h4>
+  <img src=img/fire_paint.jpeg alt="Appearance target">
+  <video loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamic_texture_synthesis/target/fireplace_1.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+  <video loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamics_style_transfer/1/fireplace_1_to_fire_paint.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+          <div class=dynamics-style-transfer-1>
+  <h4>flag_2_to_flag_cropped_1</h4>
+  <img src=img/flag_cropped_1.jpeg alt="Appearance target">
+  <video loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamic_texture_synthesis/target/flag_2.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+  <video loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamics_style_transfer/1/flag_2_to_flag_cropped_1.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+          <div class=dynamics-style-transfer-1>
+  <h4>flag_2_to_flag_cropped_2</h4>
+  <img src=img/flag_cropped_2.jpeg alt="Appearance target">
+  <video loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamic_texture_synthesis/target/flag_2.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+  <video loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamics_style_transfer/1/flag_2_to_flag_cropped_2.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+          <div class=dynamics-style-transfer-1>
+  <h4>water_4_to_water_img</h4>
+  <img src=img/water_img.jpeg alt="Appearance target">
+  <video loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamic_texture_synthesis/target/water_4.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+  <video loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamics_style_transfer/1/water_4_to_water_img.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+        </pre>
+      </div>
+      <p>Portions of images can be animated.</p>
+      <div class=highlighter-rouge>
+        <pre class="highlighter wrapper texture-wrapper">
+          <div class=dynamics-style-transfer-2>
+  <h4>waterfall_to_waterfall_paint</h4>
+  <div>
+    <img src=img/waterfall_paint_cropped.jpeg alt="Appearance target">
+    <video loop controls onclick=this.paused?this.play():this.pause()>
+      <source src=textures/dynamic_texture_synthesis/target/waterfall.mp4 type=video/mp4>
+      Your browser does not support the video tag.
+    </video>
+    <video loop controls onclick=this.paused?this.play():this.pause()>
+      <source src=textures/dynamics_style_transfer/2/waterfall_to_waterfall_paint_cropped.mp4 type=video/mp4>
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <video class=pasted loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamics_style_transfer/2/waterfall_to_waterfall_paint.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+          <div class=dynamics-style-transfer-2>
+  <h4>water_4_to_water_paint_2</h4>
+  <div>
+    <img src=img/water_paint_2_cropped.jpeg alt="Appearance target">
+    <video loop controls onclick=this.paused?this.play():this.pause()>
+      <source src=textures/dynamic_texture_synthesis/target/water_4.mp4 type=video/mp4>
+      Your browser does not support the video tag.
+    </video>
+    <video loop controls onclick=this.paused?this.play():this.pause()>
+      <source src=textures/dynamics_style_transfer/2/water_4_to_water_paint_2_cropped.mp4 type=video/mp4>
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <video class=pasted loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamics_style_transfer/2/water_4_to_water_paint_2.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+          <div class=dynamics-style-transfer-2>
+  <h4>sky_clouds_2_to_sky_clouds_paint</h4>
+  <div>
+    <img src=img/sky_clouds_paint_cropped.jpeg alt="Appearance target">
+    <video loop controls onclick=this.paused?this.play():this.pause()>
+      <source src=textures/dynamic_texture_synthesis/target/sky_clouds_2.mp4 type=video/mp4>
+      Your browser does not support the video tag.
+    </video>
+    <video loop controls onclick=this.paused?this.play():this.pause()>
+      <source src=textures/dynamics_style_transfer/2/sky_clouds_2_to_sky_clouds_paint_cropped.mp4 type=video/mp4>
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <video class=pasted loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamics_style_transfer/2/sky_clouds_2_to_sky_clouds_paint.mp4 type=video/mp4>
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+          <div class=dynamics-style-transfer-2>
+  <h4>sea_1_to_water_ship</h4>
+  <div>
+    <img src=img/water_ship_cropped.png alt="Appearance target">
+    <video loop controls onclick=this.paused?this.play():this.pause()>
+      <source src=textures/dynamic_texture_synthesis/target/sea_1.mp4 type=video/mp4>
+      Your browser does not support the video tag.
+    </video>
+    <video loop controls onclick=this.paused?this.play():this.pause()>
+      <source src=textures/dynamics_style_transfer/2/sea_1_to_water_ship_cropped.mp4 type=video/mp4>
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <video class=pasted loop controls onclick=this.paused?this.play():this.pause()>
+    <source src=textures/dynamics_style_transfer/2/sea_1_to_water_ship.mp4 type=video/mp4>
     Your browser does not support the video tag.
   </video>
 </div>
