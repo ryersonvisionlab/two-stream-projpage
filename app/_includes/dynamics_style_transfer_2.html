@@ -2,17 +2,17 @@
   <h4>{{ include.name }}</h4>
   <div>
     <img src="img/{{ include.appearance_target }}" alt="Appearance target">
-    <video loop controls webkit-playsinline onclick="this.paused?this.play():this.pause();">
-      <source src="textures/{{ include.dynamics_target }}#t=0.1" type="video/mp4">
+    <video loop controls playsinline onclick="this.paused?this.play():this.pause();">
+      <source src="textures/{{ include.dynamics_target }}" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <video loop controls webkit-playsinline onclick="this.paused?this.play():this.pause();">
-      <source src="textures/{{ include.synthesized }}#t=0.1" type="video/mp4">
+    <video loop controls playsinline onclick="this.paused?this.play():this.pause();">
+      <source src="textures/{{ include.synthesized }}" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
-  <video class="pasted" loop controls webkit-playsinline onclick="this.paused?this.play():this.pause();">
-    <source src="textures/{{ include.pasted }}#t=0.1" type="video/mp4">
+  <video class="pasted" loop controls playsinline onclick="this.paused?this.play():this.pause();">
+    <source src="textures/{{ include.pasted }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
