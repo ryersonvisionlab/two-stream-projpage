@@ -1,11 +1,11 @@
 <div class="dynamics-style-transfer-1">
   <h4>{{ include.name }}</h4>
   <img src="img/{{ include.appearance_target }}" alt="Appearance target">
-  <video loop controls playsinline onclick="this.paused?this.play():this.pause();">
+  <video muted loop controls playsinline webkit-playsinline onclick="this.paused?this.play():this.pause();">
     <source src="textures/{{ include.dynamics_target }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <video loop controls playsinline onclick="this.paused?this.play():this.pause();">
+  <video muted loop controls playsinline webkit-playsinline onclick="this.paused?this.play():this.pause();">
     <source src="textures/{{ include.synthesized }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
