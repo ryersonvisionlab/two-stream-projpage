@@ -177,6 +177,11 @@
   width: calc(#{$content-width} - (#{$spacing-unit} * 2));
   margin-bottom: $spacing-unit;
   text-align: center;
+  box-sizing: border-box;
+
+  img {
+    width: 256px;
+  }
 }
 
 .texture-comparison {
@@ -193,13 +198,39 @@
   }
 }
 
-.dynamics-style-transfer {
+.dynamics-style-transfer-1 {
   display: inline-block;
   text-align: center;
   margin-right: $spacing-unit / 3;
 
   video {
     display: block;
+  }
+
+  video:first-of-type, img {
+    margin-bottom: $spacing-unit / 3;
+  }
+}
+
+.dynamics-style-transfer-2 {
+  display: inline-block;
+  text-align: center;
+  margin-right: $spacing-unit / 3;
+
+  div {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  video {
+    display: block;
+    margin: 0 auto;
+  }
+
+  video.pasted {
+    display: inline-block;
+    vertical-align: top;
+    // height: 520px;
   }
 
   video:first-of-type, img {

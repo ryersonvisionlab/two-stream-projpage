@@ -41,7 +41,7 @@ layout: default
       <div class="highlighter-rouge">
         <pre class="highlighter wrapper texture-wrapper">
           {% include texture_comparison.html name="ants" target="dynamic_texture_synthesis/target/ants.mp4" synthesized="dynamic_texture_synthesis/output/ants_output.mp4" %}
-          {% include texture_comparison.html name="birds" target="dynamic_texture_synthesis/target/birbs.mp4" synthesized="dynamic_texture_synthesis/output/birbs_output.mp4" %}
+          {% include texture_comparison.html name="birds" target="dynamic_texture_synthesis/target/birds.mp4" synthesized="dynamic_texture_synthesis/output/birds_output.mp4" %}
           {% include texture_comparison.html name="boiling_water_1" target="dynamic_texture_synthesis/target/boiling_water_1.mp4" synthesized="dynamic_texture_synthesis/output/boiling_water_1_output.mp4" %}
           {% include texture_comparison.html name="boiling_water_2" target="dynamic_texture_synthesis/target/boiling_water_2.mp4" synthesized="dynamic_texture_synthesis/output/boiling_water_2_output.mp4" %}
           {% include texture_comparison.html name="calm_water" target="dynamic_texture_synthesis/target/calm_water.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_output.mp4" %}
@@ -65,7 +65,6 @@ layout: default
           {% include texture_comparison.html name="water_3" target="dynamic_texture_synthesis/target/water_3.mp4" synthesized="dynamic_texture_synthesis/output/water_3_output.mp4" %}
           {% include texture_comparison.html name="water_4" target="dynamic_texture_synthesis/target/water_4.mp4" synthesized="dynamic_texture_synthesis/output/water_4_output.mp4" %}
           {% include texture_comparison.html name="water_5" target="dynamic_texture_synthesis/target/water_5.mp4" synthesized="dynamic_texture_synthesis/output/water_5_output.mp4" %}
-          {% include texture_comparison.html name="waterfall" target="dynamic_texture_synthesis/target/waterfall.mp4" synthesized="dynamic_texture_synthesis/output/waterfall_output.mp4" %}
         </pre>
       </div>
       <h3>Failure cases</h3>
@@ -98,6 +97,7 @@ layout: default
           {% include texture_comparison.html name="snake_3" target="dynamic_texture_synthesis/target/snake_3.mp4" synthesized="dynamic_texture_synthesis/output/snake_3_output.mp4" %}
           {% include texture_comparison.html name="snake_4" target="dynamic_texture_synthesis/target/snake_4.mp4" synthesized="dynamic_texture_synthesis/output/snake_4_output.mp4" %}
           {% include texture_comparison.html name="snake_5" target="dynamic_texture_synthesis/target/snake_5.mp4" synthesized="dynamic_texture_synthesis/output/snake_5_output.mp4" %}
+          {% include texture_comparison.html name="waterfall" target="dynamic_texture_synthesis/target/waterfall.mp4" synthesized="dynamic_texture_synthesis/output/waterfall_output.mp4" %}
         </pre>
       </div>
     </div>
@@ -139,10 +139,25 @@ layout: default
     </div>
     <div class="wrapper dynstytrans-wrapper">
       <h2 class="header dynstytrans-header">Dynamics Style Transfer</h2>
-      <p>The underlying assumption of our model is that the appearance and dynamics of a dynamic texture can be factorized. As such, it should allow for the transfer of the dynamics of one texture onto the appearance of another. This has been explored previously for <a href="https://arxiv.org/abs/1508.06576">artistic style transfer</a> with static imagery. We accomplish this with our model by performing the same optimization as above, but with the target Gram matrices for appearance and dynamics computed from different textures.</p>
+      <p>The underlying assumption of our model is that the appearance and dynamics of a dynamic texture can be factorized. As such, it should allow for the transfer of the dynamics of one texture onto the appearance of another. This has been explored previously for <a href="https://arxiv.org/abs/1508.06576">artistic style transfer</a> with static imagery. We accomplish this with our model by performing the same optimization as usual, but with the target Gram matrices for appearance and dynamics computed from different textures. In effect, the static texture is animated and hence brought to life. To the best of our
+knowledge, we are the first to demonstrate this form of style transfer.</p>
+      <p>The top row consists of the appearance target, the second row the dynamics target, and the third row the synthesized result.</p>
       <div class="highlighter-rouge">
         <pre class="highlighter wrapper texture-wrapper">
-          {% include dynamics_style_transfer.html name="calm_water_3_to_water_paint_1" appearance_target="water_paint_1.jpeg" dynamics_target="dynamic_texture_synthesis/target/calm_water_3.mp4" synthesized="dynamics_style_transfer/calm_water_3_to_water_paint_1/calm_water_3_to_water_paint_1.mp4" %}
+          {% include dynamics_style_transfer_1.html name="calm_water_3_to_water_paint_1" appearance_target="water_paint_1.jpeg" dynamics_target="dynamic_texture_synthesis/target/calm_water_3.mp4" synthesized="dynamics_style_transfer/1/calm_water_3_to_water_paint_1.mp4" %}
+          {% include dynamics_style_transfer_1.html name="fireplace_1_to_fire_paint" appearance_target="fire_paint.jpeg" dynamics_target="dynamic_texture_synthesis/target/fireplace_1.mp4" synthesized="dynamics_style_transfer/1/fireplace_1_to_fire_paint.mp4" %}
+          {% include dynamics_style_transfer_1.html name="flag_2_to_flag_cropped_1" appearance_target="flag_cropped_1.jpeg" dynamics_target="dynamic_texture_synthesis/target/flag_2.mp4" synthesized="dynamics_style_transfer/1/flag_2_to_flag_cropped_1.mp4" %}
+          {% include dynamics_style_transfer_1.html name="flag_2_to_flag_cropped_2" appearance_target="flag_cropped_2.jpeg" dynamics_target="dynamic_texture_synthesis/target/flag_2.mp4" synthesized="dynamics_style_transfer/1/flag_2_to_flag_cropped_2.mp4" %}
+          {% include dynamics_style_transfer_1.html name="water_4_to_water_img" appearance_target="water_img.jpeg" dynamics_target="dynamic_texture_synthesis/target/water_4.mp4" synthesized="dynamics_style_transfer/1/water_4_to_water_img.mp4" %}
+        </pre>
+      </div>
+      <p>Portions of images can be animated.</p>
+      <div class="highlighter-rouge">
+        <pre class="highlighter wrapper texture-wrapper">
+          {% include dynamics_style_transfer_2.html name="waterfall_to_waterfall_paint" appearance_target="waterfall_paint_cropped.jpeg" dynamics_target="dynamic_texture_synthesis/target/waterfall.mp4" synthesized="dynamics_style_transfer/2/waterfall_to_waterfall_paint_cropped.mp4" pasted="dynamics_style_transfer/2/waterfall_to_waterfall_paint.mp4" %}
+          {% include dynamics_style_transfer_2.html name="water_4_to_water_paint_2" appearance_target="water_paint_2_cropped.jpeg" dynamics_target="dynamic_texture_synthesis/target/water_4.mp4" synthesized="dynamics_style_transfer/2/water_4_to_water_paint_2_cropped.mp4" pasted="dynamics_style_transfer/2/water_4_to_water_paint_2.mp4" %}
+          {% include dynamics_style_transfer_2.html name="sky_clouds_2_to_sky_clouds_paint" appearance_target="sky_clouds_paint_cropped.jpeg" dynamics_target="dynamic_texture_synthesis/target/sky_clouds_2.mp4" synthesized="dynamics_style_transfer/2/sky_clouds_2_to_sky_clouds_paint_cropped.mp4" pasted="dynamics_style_transfer/2/sky_clouds_2_to_sky_clouds_paint.mp4" %}
+          {% include dynamics_style_transfer_2.html name="sea_1_to_water_ship" appearance_target="water_ship_cropped.png" dynamics_target="dynamic_texture_synthesis/target/sea_1.mp4" synthesized="dynamics_style_transfer/2/sea_1_to_water_ship_cropped.mp4" pasted="dynamics_style_transfer/2/sea_1_to_water_ship.mp4" %}
         </pre>
       </div>
     </div>
