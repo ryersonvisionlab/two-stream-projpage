@@ -123,17 +123,17 @@
 }
 
 .author-col-1 {
-  width: -webkit-calc(27.5%);
+  width: -webkit-calc(100% / 3);
   width:         calc(100% / 3);
 }
 
 .author-col-2 {
-  width: -webkit-calc(27.5%);
+  width: -webkit-calc(100% / 3);
   width:         calc(100% / 3);
 }
 
 .author-col-3 {
-  width: -webkit-calc(27.5%);
+  width: -webkit-calc(100% / 3);
   width:         calc(100% / 3);
 }
 
@@ -168,17 +168,6 @@
 
 
 /**
- * Dynamic Texture Synthesis display
- */
-.dyntexsynth-wrapper{
-  p {
-    margin-bottom: $spacing-unit / 2;
-  }
-}
-
-
-
-/**
  * Texture display
  */
 .texture-wrapper {
@@ -186,10 +175,8 @@
   overflow-y: hidden;
   white-space: nowrap;
   width: calc(#{$content-width} - (#{$spacing-unit} * 2));
-
-  &:first-of-type {
-    margin-bottom: $spacing-unit;
-  }
+  margin-bottom: $spacing-unit;
+  text-align: center;
 }
 
 .texture-comparison {
@@ -202,6 +189,20 @@
   }
 
   video:first-of-type {
+    margin-bottom: $spacing-unit / 3;
+  }
+}
+
+.dynamics-style-transfer {
+  display: inline-block;
+  text-align: center;
+  margin-right: $spacing-unit / 3;
+
+  video {
+    display: block;
+  }
+
+  video:first-of-type, img {
     margin-bottom: $spacing-unit / 3;
   }
 }

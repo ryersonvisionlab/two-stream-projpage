@@ -1,10 +1,10 @@
 <div class="texture-comparison">
   <h4>{{ include.name }}</h4>
-  <video loop onclick="this.paused?this.play():this.pause();">
+  <video loop controls onclick="this.paused?this.play():this.pause();">
     <source src="textures/{{ include.target }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <video loop onclick="this.paused?this.play():this.pause();">
+  <video loop controls onclick="this.paused?this.play():this.pause();">
     <source src="textures/{{ include.synthesized }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
