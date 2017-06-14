@@ -1,10 +1,10 @@
 <div class="texture-comparison">
   <h4>{{ include.name }}</h4>
-  <video muted loop controls playsinline webkit-playsinline preload="none" onclick="this.paused?this.play():this.pause();">
+  <video muted loop controls playsinline webkit-playsinline preload="none" onclick="this.paused?this.play():this.pause();" poster="img/posters/{{ include.name }}.jpeg">
     <source src="textures/{{ include.target }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <video muted loop controls playsinline webkit-playsinline preload="none" onclick="this.paused?this.play():this.pause();">
+  <video muted loop controls playsinline webkit-playsinline preload="none" onclick="this.paused?this.play():this.pause();" poster="img/posters/{{ include.name }}_output.jpeg">
     <source src="textures/{{ include.synthesized }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
