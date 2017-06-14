@@ -2,16 +2,16 @@
   <h4>{{ include.name }}</h4>
   <div>
     <img src="img/{{ include.appearance_target }}" alt="Appearance target">
-    <video muted loop controls playsinline webkit-playsinline preload="none" onclick="this.paused?this.play():this.pause();">
+    <video muted loop controls playsinline webkit-playsinline preload="none" onclick="this.paused?this.play():this.pause();" poster="{{ include.dynamics_target_poster }}">
       <source src="textures/{{ include.dynamics_target }}" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <video muted loop controls playsinline webkit-playsinline preload="none" onclick="this.paused?this.play():this.pause();">
+    <video muted loop controls playsinline webkit-playsinline preload="none" onclick="this.paused?this.play():this.pause();" poster="{{ include.synthesized_poster }}">
       <source src="textures/{{ include.synthesized }}" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
-  <video class="pasted" muted loop controls playsinline webkit-playsinline preload="none" onclick="this.paused?this.play():this.pause();">
+  <video class="pasted" muted loop controls playsinline webkit-playsinline preload="none" onclick="this.paused?this.play():this.pause();" poster="{{ include.pasted_poster }}">
     <source src="textures/{{ include.pasted }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
