@@ -171,6 +171,7 @@
 .texture-wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   white-space: nowrap;
   width: calc(#{$content-width} - (#{$spacing-unit} * 2));
   margin-bottom: $spacing-unit;
