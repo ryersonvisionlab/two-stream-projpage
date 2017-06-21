@@ -6,13 +6,13 @@ layout: default
   <div class="home-content">
     <div class="wrapper abstract-wrapper">
       <h2 class="header abstract-header">Abstract</h2>
-      <p>We introduce a two-stream model for dynamic texture synthesis. Our model is based on pre-trained convolutional networks (ConvNets) that target two independent tasks: (i) object recognition, and (ii) optical flow prediction. Given an input dynamic texture, statistics of filter responses from the object recognition ConvNet encapsulates the per frame appearance of the input texture, while statistics of filter responses from the optical flow ConvNet models its dynamics. To generate a novel texture, a noise input sequence is optimized to simultaneously match the feature statistics from each stream of the example texture. Inspired by recent work on image style transfer and enabled by the two-stream model, we also apply the synthesis approach to combine the texture appearance from one texture with the dynamics of another to generate entirely novel dynamic textures. We show that our approach generates novel, high quality samples that match both the framewise appearance and temporal evolution of an input example.</p>
+      <p>We introduce a two-stream model for dynamic texture synthesis. Our model is based on pre-trained convolutional networks (ConvNets) that target two independent tasks: (i) object recognition, and (ii) optical flow prediction. Given an input dynamic texture, statistics of filter responses from the object recognition ConvNet encapsulates the per frame appearance of the input texture, while statistics of filter responses from the optical flow ConvNet models its dynamics. To generate a novel texture, a noise input sequence is optimized to simultaneously match the feature statistics from each stream of the example texture. Inspired by recent work on image style transfer and enabled by the two-stream model, we also apply the synthesis approach to combine the texture appearance from one texture with the dynamics of another to generate entirely novel dynamic textures. We show that our approach generates novel, high quality samples that match both the framewise appearance and temporal evolution of input imagery.</p>
     </div>
     <div class="wrapper material-wrapper">
       <h2 class="header material-header">Material</h2>
       <div class="wrapper pdf-wrapper">
         <div class="pdf">
-          <a href="#"><img src="img/twostreamconv_preview.jpg" alt="Two-Stream Convolutional Networks for Dynamic Texture Synthesis"><span>Paper (soon)</span></a>
+          <a href="#"><img src="img/twostreamconv_preview.jpg" alt="Two-Stream Convolutional Networks for Dynamic Texture Synthesis"><span>Paper (coming soon)</span></a>
         </div>
         <div class="pdf">
           <a href="pdf/twostreamconvposter.pdf"><img src="img/twostreamconvposter_preview.jpg" alt="Poster for Two-Stream Convolutional Networks for Dynamic Texture Synthesis"><span>Poster</span></a>
@@ -20,7 +20,7 @@ layout: default
         <div class="pdf">
           <a href="#">
             <span class="icon">{% include icon-github.svg %}</span>
-            <span>Code (soon)</span>
+            <span>Code (coming soon)</span>
           </a>
         </div>
       </div>
@@ -59,7 +59,7 @@ layout: default
           {% include texture_comparison.html name="smoke_1" target="dynamic_texture_synthesis/target/smoke_1.mp4" synthesized="dynamic_texture_synthesis/output/smoke_1_output.mp4" %}
           {% include texture_comparison.html name="smoke_2" target="dynamic_texture_synthesis/target/smoke_2.mp4" synthesized="dynamic_texture_synthesis/output/smoke_2_output.mp4" %}
           {% include texture_comparison.html name="smoke_plume_1" target="dynamic_texture_synthesis/target/smoke_plume_1.mp4" synthesized="dynamic_texture_synthesis/output/smoke_plume_1_output.mp4" %}
-          {% include texture_comparison.html name="underwater_vegetation_1" target="dynamic_texture_synthesis/target/underwater_vegetation_1.mp4" synthesized="dynamic_texture_synthesis/output/underwater_vegetation_1_output.mp4" %}
+          {% include texture_comparison.html name="underwater_vegetation" target="dynamic_texture_synthesis/target/underwater_vegetation.mp4" synthesized="dynamic_texture_synthesis/output/underwater_vegetation_output.mp4" %}
           {% include texture_comparison.html name="water_1" target="dynamic_texture_synthesis/target/water_1.mp4" synthesized="dynamic_texture_synthesis/output/water_1_output.mp4" %}
           {% include texture_comparison.html name="water_2" target="dynamic_texture_synthesis/target/water_2.mp4" synthesized="dynamic_texture_synthesis/output/water_2_output.mp4" %}
           {% include texture_comparison.html name="water_3" target="dynamic_texture_synthesis/target/water_3.mp4" synthesized="dynamic_texture_synthesis/output/water_3_output.mp4" %}
@@ -68,13 +68,12 @@ layout: default
         </pre>
       </div>
       <h3>Failure cases</h3>
-      <p>Inputs which do not follow the underlying assumption of a dynamic texture typically result in subpar synthesized dynamic textures. However, some of the results are plausible dynamic textures.</p>
+      <p>Inputs which do not follow the underlying assumption of a dynamic texture may result in perceptually implausible synthesized dynamic textures.</p>
       <div class="highlighter-rouge">
         <pre class="highlighter wrapper texture-wrapper">
           {% include texture_comparison.html name="calm_water_3" target="dynamic_texture_synthesis/target/calm_water_3.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_3_output.mp4" %}
           {% include texture_comparison.html name="candle_flame" target="dynamic_texture_synthesis/target/candle_flame.mp4" synthesized="dynamic_texture_synthesis/output/candle_flame_output.mp4" %}
           {% include texture_comparison.html name="candy_1" target="dynamic_texture_synthesis/target/candy_1.mp4" synthesized="dynamic_texture_synthesis/output/candy_1_output.mp4" %}
-          {% include texture_comparison.html name="candy_2" target="dynamic_texture_synthesis/target/candy_2.mp4" synthesized="dynamic_texture_synthesis/output/candy_2_output.mp4" %}
           {% include texture_comparison.html name="coral" target="dynamic_texture_synthesis/target/coral.mp4" synthesized="dynamic_texture_synthesis/output/coral_output.mp4" %}
           {% include texture_comparison.html name="cranberries" target="dynamic_texture_synthesis/target/cranberries.mp4" synthesized="dynamic_texture_synthesis/output/cranberries_output.mp4" %}
           {% include texture_comparison.html name="escalator" target="dynamic_texture_synthesis/target/escalator.mp4" synthesized="dynamic_texture_synthesis/output/escalator_output.mp4" %}
@@ -120,6 +119,7 @@ layout: default
         <pre class="highlight wrapper texture-wrapper">
           {% include texture_comparison.html name="calm_water_4" target="dynamic_texture_synthesis/target/calm_water_4.mp4" synthesized="extended_dynamic_texture_synthesis/calm_water_4_extended.mp4" %}
           {% include texture_comparison.html name="calm_water_5" target="dynamic_texture_synthesis/target/calm_water_5.mp4" synthesized="extended_dynamic_texture_synthesis/calm_water_5_extended.mp4" %}
+          {% include texture_comparison.html name="candy_2" target="dynamic_texture_synthesis/target/candy_2.mp4" synthesized="dynamic_texture_synthesis/output/candy_2_output.mp4" %}
           {% include texture_comparison.html name="flag" target="dynamic_texture_synthesis/target/flag.mp4" synthesized="extended_dynamic_texture_synthesis/flag_extended.mp4" %}
           {% include texture_comparison.html name="sky_clouds_1" target="dynamic_texture_synthesis/target/sky_clouds_1.mp4" synthesized="extended_dynamic_texture_synthesis/sky_clouds_1_extended.mp4" %}
           {% include texture_comparison.html name="smoke_1" target="dynamic_texture_synthesis/target/smoke_1.mp4" synthesized="extended_dynamic_texture_synthesis/smoke_1_extended.mp4" %}

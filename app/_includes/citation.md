@@ -1,7 +1,7 @@
 ```
-(soon)
+(coming soon)
 ```
 Bibtex format:
 ```
-(soon)
+(coming soon)
 ```
