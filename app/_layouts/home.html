@@ -6,7 +6,7 @@ layout: default
   <div class="home-content">
     <div class="wrapper abstract-wrapper">
       <h2 class="header abstract-header">Abstract</h2>
-      <p>We introduce a two-stream model for dynamic texture synthesis. Our model is based on pre-trained convolutional networks (ConvNets) that target two independent tasks: (i) object recognition, and (ii) optical flow prediction. Given an input dynamic texture, statistics of filter responses from the object recognition ConvNet encapsulates the per frame appearance of the input texture, while statistics of filter responses from the optical flow ConvNet models its dynamics. To generate a novel texture, a noise input sequence is optimized to simultaneously match the feature statistics from each stream of the example texture. Inspired by recent work on image style transfer and enabled by the two-stream model, we also apply the synthesis approach to combine the texture appearance from one texture with the dynamics of another to generate entirely novel dynamic textures. We show that our approach generates novel, high quality samples that match both the framewise appearance and temporal evolution of input imagery.</p>
+      <p>We introduce a two-stream model for dynamic texture synthesis. Our model is based on pre-trained convolutional networks (ConvNets) that target two independent tasks: (i) object recognition, and (ii) optical flow prediction. Given an input dynamic texture, statistics of filter responses from the object recognition ConvNet encapsulate the per-frame appearance of the input texture, while statistics of filter responses from the optical flow ConvNet model its dynamics. To generate a novel texture, a noise input sequence is optimized to simultaneously match the feature statistics from each stream of an example texture. Inspired by recent work on image style transfer and enabled by the two-stream model, we also apply the synthesis approach to combine the texture appearance from one texture with the dynamics of another to generate entirely novel dynamic textures. We show that our approach generates novel, high quality samples that match both the framewise appearance and temporal evolution of input texture imagery. Finally, we quantitatively evaluate our approach with a thorough user study.</p>
     </div>
     <div class="wrapper material-wrapper">
       <h2 class="header material-header">Material</h2>
@@ -15,7 +15,10 @@ layout: default
           <a href="https://arxiv.org/abs/1706.06982"><img src="img/twostreamconv_preview.jpg" alt="Two-Stream Convolutional Networks for Dynamic Texture Synthesis"><span>Paper</span></a>
         </div>
         <div class="pdf">
-          <a href="pdf/twostreamconvposter.pdf"><img src="img/twostreamconvposter_preview.jpg" alt="Poster for Two-Stream Convolutional Networks for Dynamic Texture Synthesis"><span>Poster</span></a>
+          <a href="supplemental.zip">
+            <span class="icon">{% include icon-briefcase.svg %}</span>
+            <span>Supplemental</span>
+          </a>
         </div>
         <div class="pdf">
           <a href="#">
@@ -33,70 +36,71 @@ layout: default
     </div>
     <div class="wrapper dyntexsynth-wrapper">
       <h2 class="header dyntexsynth-header">Dynamic Texture Synthesis</h2>
-      <p>We applied our dynamic texture synthesis process to a wide range of textures which were selected from the <a href="http://dyntex.univ-lr.fr/database.html">DynTex</a> database as well as others collected in-the-wild. Here we provide synthesized results of over 50 different textures that encapsulate a range of phenomena, such as flowing water, waves, clouds, fire, rippling flags, waving plants, and schools of fish. Unless otherwise stated, both target and synthesized dynamic textures consist of 12 frames.</p>
+      <p>We applied our dynamic texture synthesis process to a wide range of textures which were selected from the <a href="http://dyntex.univ-lr.fr/database.html">DynTex</a> database as well as others collected in-the-wild. Here we provide synthesized results of nearly 60 different textures that encapsulate a range of phenomena, such as flowing water, waves, clouds, fire, rippling flags, waving plants, and schools of fish. Unless otherwise stated, both target and synthesized dynamic textures consist of 12 frames.</p>
       <p>The top row consists of the target dynamic textures while the bottom row consists of the synthesized dynamic textures. Scroll horizontally to view more.</p>
+      <p>Inputs which follow the underlying assumption of a dynamic texture, i.e., the appearance and/or dynamics are more-or-less spatially/temporally homogeneous, allow for better synthesized results. Inputs which do not follow the underlying assumption of a dynamic texture may result in perceptually implausible synthesized dynamic textures.</p>
       <p><strong>Click on a thumbnail to play the dynamic texture.</strong></p>
-      <h3>Success cases</h3>
-      <p>Inputs which follow the underlying assumption of a dynamic texture, i.e., the appearance and/or dynamics are more-or-less spatially/temporally homogeneous, allow for better synthesized results.</p>
       <div class="highlighter-rouge">
         <pre class="highlighter wrapper texture-wrapper">
-          {% include texture_comparison.html name="ants" target="dynamic_texture_synthesis/target/ants.mp4" synthesized="dynamic_texture_synthesis/output/ants_output.mp4" %}
-          {% include texture_comparison.html name="birds" target="dynamic_texture_synthesis/target/birds.mp4" synthesized="dynamic_texture_synthesis/output/birds_output.mp4" %}
-          {% include texture_comparison.html name="boiling_water_1" target="dynamic_texture_synthesis/target/boiling_water_1.mp4" synthesized="dynamic_texture_synthesis/output/boiling_water_1_output.mp4" %}
-          {% include texture_comparison.html name="boiling_water_2" target="dynamic_texture_synthesis/target/boiling_water_2.mp4" synthesized="dynamic_texture_synthesis/output/boiling_water_2_output.mp4" %}
-          {% include texture_comparison.html name="calm_water" target="dynamic_texture_synthesis/target/calm_water.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_output.mp4" %}
-          {% include texture_comparison.html name="calm_water_2" target="dynamic_texture_synthesis/target/calm_water_2.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_2_output.mp4" %}
-          {% include texture_comparison.html name="calm_water_4" target="dynamic_texture_synthesis/target/calm_water_4.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_4_output.mp4" %}
-          {% include texture_comparison.html name="calm_water_5" target="dynamic_texture_synthesis/target/calm_water_5.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_5_output.mp4" %}
-          {% include texture_comparison.html name="fireplace_1" target="dynamic_texture_synthesis/target/fireplace_1.mp4" synthesized="dynamic_texture_synthesis/output/fireplace_1_output.mp4" %}
+          {% include texture_comparison.html name="ants" target="dynamic_texture_synthesis/target/ants.mp4" synthesized="dynamic_texture_synthesis/output/ants.mp4" %}
+          {% include texture_comparison.html name="bamboo" target="dynamic_texture_synthesis/target/bamboo.mp4" synthesized="dynamic_texture_synthesis/output/bamboo.mp4" %}
+          {% include texture_comparison.html name="birds" target="dynamic_texture_synthesis/target/birds.mp4" synthesized="dynamic_texture_synthesis/output/birds.mp4" %}
+          {% include texture_comparison.html name="boiling_water_1" target="dynamic_texture_synthesis/target/boiling_water_1.mp4" synthesized="dynamic_texture_synthesis/output/boiling_water_1.mp4" %}
+          {% include texture_comparison.html name="boiling_water_2" target="dynamic_texture_synthesis/target/boiling_water_2.mp4" synthesized="dynamic_texture_synthesis/output/boiling_water_2.mp4" %}
+          {% include texture_comparison.html name="calm_water" target="dynamic_texture_synthesis/target/calm_water.mp4" synthesized="dynamic_texture_synthesis/output/calm_water.mp4" %}
+          {% include texture_comparison.html name="calm_water_2" target="dynamic_texture_synthesis/target/calm_water_2.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_2.mp4" %}
+          {% include texture_comparison.html name="calm_water_3" target="dynamic_texture_synthesis/target/calm_water_3.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_3.mp4" %}
+          {% include texture_comparison.html name="calm_water_4" target="dynamic_texture_synthesis/target/calm_water_4.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_4.mp4" %}
+          {% include texture_comparison.html name="calm_water_5" target="dynamic_texture_synthesis/target/calm_water_5.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_5.mp4" %}
+          {% include texture_comparison.html name="calm_water_6" target="dynamic_texture_synthesis/target/calm_water_6.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_6.mp4" %}
+          {% include texture_comparison.html name="candle_flame" target="dynamic_texture_synthesis/target/candle_flame.mp4" synthesized="dynamic_texture_synthesis/output/candle_flame.mp4" %}
+          {% include texture_comparison.html name="candy_1" target="dynamic_texture_synthesis/target/candy_1.mp4" synthesized="dynamic_texture_synthesis/output/candy_1.mp4" %}
+          {% include texture_comparison.html name="candy_2" target="dynamic_texture_synthesis/target/candy_2.mp4" synthesized="dynamic_texture_synthesis/output/candy_2.mp4" %}
+          {% include texture_comparison.html name="coral" target="dynamic_texture_synthesis/target/coral.mp4" synthesized="dynamic_texture_synthesis/output/coral.mp4" %}
+          {% include texture_comparison.html name="cranberries" target="dynamic_texture_synthesis/target/cranberries.mp4" synthesized="dynamic_texture_synthesis/output/cranberries.mp4" %}
+          {% include texture_comparison.html name="escalator" target="dynamic_texture_synthesis/target/escalator.mp4" synthesized="dynamic_texture_synthesis/output/escalator.mp4" %}
+          {% include texture_comparison.html name="fireplace_1" target="dynamic_texture_synthesis/target/fireplace_1.mp4" synthesized="dynamic_texture_synthesis/output/fireplace_1.mp4" %}
+          {% include texture_comparison.html name="fireplace_2" target="dynamic_texture_synthesis/target/fireplace_2.mp4" synthesized="dynamic_texture_synthesis/output/fireplace_2.mp4" %}
           {% include texture_comparison.html name="fish" target="dynamic_texture_synthesis/target/fish.mp4" synthesized="dynamic_texture_synthesis/output/fish_output.mp4" %}
-          {% include texture_comparison.html name="fountain_1" target="dynamic_texture_synthesis/target/fountain_1.mp4" synthesized="dynamic_texture_synthesis/output/fountain_1_output.mp4" %}
-          {% include texture_comparison.html name="grass_1" target="dynamic_texture_synthesis/target/grass_1.mp4" synthesized="dynamic_texture_synthesis/output/grass_1_output.mp4" %}
-          {% include texture_comparison.html name="ink" target="dynamic_texture_synthesis/target/ink.mp4" synthesized="dynamic_texture_synthesis/output/ink_output.mp4" %}
-          {% include texture_comparison.html name="lava" target="dynamic_texture_synthesis/target/lava.mp4" synthesized="dynamic_texture_synthesis/output/lava_output.mp4" %}
-          {% include texture_comparison.html name="sea_2" target="dynamic_texture_synthesis/target/sea_2.mp4" synthesized="dynamic_texture_synthesis/output/sea_2_output.mp4" %}
-          {% include texture_comparison.html name="sky_clouds_1" target="dynamic_texture_synthesis/target/sky_clouds_1.mp4" synthesized="dynamic_texture_synthesis/output/sky_clouds_1_output.mp4" %}
-          {% include texture_comparison.html name="smoke_1" target="dynamic_texture_synthesis/target/smoke_1.mp4" synthesized="dynamic_texture_synthesis/output/smoke_1_output.mp4" %}
-          {% include texture_comparison.html name="smoke_2" target="dynamic_texture_synthesis/target/smoke_2.mp4" synthesized="dynamic_texture_synthesis/output/smoke_2_output.mp4" %}
-          {% include texture_comparison.html name="smoke_plume_1" target="dynamic_texture_synthesis/target/smoke_plume_1.mp4" synthesized="dynamic_texture_synthesis/output/smoke_plume_1_output.mp4" %}
-          {% include texture_comparison.html name="underwater_vegetation" target="dynamic_texture_synthesis/target/underwater_vegetation.mp4" synthesized="dynamic_texture_synthesis/output/underwater_vegetation_output.mp4" %}
-          {% include texture_comparison.html name="water_1" target="dynamic_texture_synthesis/target/water_1.mp4" synthesized="dynamic_texture_synthesis/output/water_1_output.mp4" %}
-          {% include texture_comparison.html name="water_2" target="dynamic_texture_synthesis/target/water_2.mp4" synthesized="dynamic_texture_synthesis/output/water_2_output.mp4" %}
-          {% include texture_comparison.html name="water_3" target="dynamic_texture_synthesis/target/water_3.mp4" synthesized="dynamic_texture_synthesis/output/water_3_output.mp4" %}
-          {% include texture_comparison.html name="water_4" target="dynamic_texture_synthesis/target/water_4.mp4" synthesized="dynamic_texture_synthesis/output/water_4_output.mp4" %}
-          {% include texture_comparison.html name="water_5" target="dynamic_texture_synthesis/target/water_5.mp4" synthesized="dynamic_texture_synthesis/output/water_5_output.mp4" %}
-        </pre>
-      </div>
-      <h3>Failure cases</h3>
-      <p>Inputs which do not follow the underlying assumption of a dynamic texture may result in perceptually implausible synthesized dynamic textures.</p>
-      <div class="highlighter-rouge">
-        <pre class="highlighter wrapper texture-wrapper">
-          {% include texture_comparison.html name="calm_water_3" target="dynamic_texture_synthesis/target/calm_water_3.mp4" synthesized="dynamic_texture_synthesis/output/calm_water_3_output.mp4" %}
-          {% include texture_comparison.html name="candle_flame" target="dynamic_texture_synthesis/target/candle_flame.mp4" synthesized="dynamic_texture_synthesis/output/candle_flame_output.mp4" %}
-          {% include texture_comparison.html name="candy_1" target="dynamic_texture_synthesis/target/candy_1.mp4" synthesized="dynamic_texture_synthesis/output/candy_1_output.mp4" %}
-          {% include texture_comparison.html name="coral" target="dynamic_texture_synthesis/target/coral.mp4" synthesized="dynamic_texture_synthesis/output/coral_output.mp4" %}
-          {% include texture_comparison.html name="cranberries" target="dynamic_texture_synthesis/target/cranberries.mp4" synthesized="dynamic_texture_synthesis/output/cranberries_output.mp4" %}
-          {% include texture_comparison.html name="escalator" target="dynamic_texture_synthesis/target/escalator.mp4" synthesized="dynamic_texture_synthesis/output/escalator_output.mp4" %}
-          {% include texture_comparison.html name="fireplace_2" target="dynamic_texture_synthesis/target/fireplace_2.mp4" synthesized="dynamic_texture_synthesis/output/fireplace_2_output.mp4" %}
-          {% include texture_comparison.html name="flag" target="dynamic_texture_synthesis/target/flag.mp4" synthesized="dynamic_texture_synthesis/output/flag_output.mp4" %}
-          {% include texture_comparison.html name="flag_2" target="dynamic_texture_synthesis/target/flag_2.mp4" synthesized="dynamic_texture_synthesis/output/flag_2_output.mp4" %}
-          {% include texture_comparison.html name="flames" target="dynamic_texture_synthesis/target/flames.mp4" synthesized="dynamic_texture_synthesis/output/flames_output.mp4" %}
-          {% include texture_comparison.html name="flushing_water" target="dynamic_texture_synthesis/target/flushing_water.mp4" synthesized="dynamic_texture_synthesis/output/flushing_water_output.mp4" %}
-          {% include texture_comparison.html name="fountain_2" target="dynamic_texture_synthesis/target/fountain_2.mp4" synthesized="dynamic_texture_synthesis/output/fountain_2_output.mp4" %}
-          {% include texture_comparison.html name="fur" target="dynamic_texture_synthesis/target/fur.mp4" synthesized="dynamic_texture_synthesis/output/fur_output.mp4" %}
-          {% include texture_comparison.html name="grass_2" target="dynamic_texture_synthesis/target/grass_2.mp4" synthesized="dynamic_texture_synthesis/output/grass_2_output.mp4" %}
-          {% include texture_comparison.html name="grass_3" target="dynamic_texture_synthesis/target/grass_3.mp4" synthesized="dynamic_texture_synthesis/output/grass_3_output.mp4" %}
-          {% include texture_comparison.html name="plants" target="dynamic_texture_synthesis/target/plants.mp4" synthesized="dynamic_texture_synthesis/output/plants_output.mp4" %}
-          {% include texture_comparison.html name="sea_1" target="dynamic_texture_synthesis/target/sea_1.mp4" synthesized="dynamic_texture_synthesis/output/sea_1_output.mp4" %}
-          {% include texture_comparison.html name="shower_water_1" target="dynamic_texture_synthesis/target/shower_water_1.mp4" synthesized="dynamic_texture_synthesis/output/shower_water_1_output.mp4" %}
-          {% include texture_comparison.html name="sky_clouds_2" target="dynamic_texture_synthesis/target/sky_clouds_2.mp4" synthesized="dynamic_texture_synthesis/output/sky_clouds_2_output.mp4" %}
-          {% include texture_comparison.html name="smoke_3" target="dynamic_texture_synthesis/target/smoke_3.mp4" synthesized="dynamic_texture_synthesis/output/smoke_3_output.mp4" %}
-          {% include texture_comparison.html name="snake_1" target="dynamic_texture_synthesis/target/snake_1.mp4" synthesized="dynamic_texture_synthesis/output/snake_1_output.mp4" %}
-          {% include texture_comparison.html name="snake_2" target="dynamic_texture_synthesis/target/snake_2.mp4" synthesized="dynamic_texture_synthesis/output/snake_2_output.mp4" %}
-          {% include texture_comparison.html name="snake_3" target="dynamic_texture_synthesis/target/snake_3.mp4" synthesized="dynamic_texture_synthesis/output/snake_3_output.mp4" %}
-          {% include texture_comparison.html name="snake_4" target="dynamic_texture_synthesis/target/snake_4.mp4" synthesized="dynamic_texture_synthesis/output/snake_4_output.mp4" %}
-          {% include texture_comparison.html name="snake_5" target="dynamic_texture_synthesis/target/snake_5.mp4" synthesized="dynamic_texture_synthesis/output/snake_5_output.mp4" %}
-          {% include texture_comparison.html name="waterfall" target="dynamic_texture_synthesis/target/waterfall.mp4" synthesized="dynamic_texture_synthesis/output/waterfall_output.mp4" %}
+          {% include texture_comparison.html name="flag" target="dynamic_texture_synthesis/target/flag.mp4" synthesized="dynamic_texture_synthesis/output/flag.mp4" %}
+          {% include texture_comparison.html name="flag_2" target="dynamic_texture_synthesis/target/flag_2.mp4" synthesized="dynamic_texture_synthesis/output/flag_2.mp4" %}
+          {% include texture_comparison.html name="flames" target="dynamic_texture_synthesis/target/flames.mp4" synthesized="dynamic_texture_synthesis/output/flames.mp4" %}
+          {% include texture_comparison.html name="flushing_water" target="dynamic_texture_synthesis/target/flushing_water.mp4" synthesized="dynamic_texture_synthesis/output/flushing_water.mp4" %}
+          {% include texture_comparison.html name="fountain_1" target="dynamic_texture_synthesis/target/fountain_1.mp4" synthesized="dynamic_texture_synthesis/output/fountain_1.mp4" %}
+          {% include texture_comparison.html name="fountain_2" target="dynamic_texture_synthesis/target/fountain_2.mp4" synthesized="dynamic_texture_synthesis/output/fountain_2.mp4" %}
+          {% include texture_comparison.html name="fur" target="dynamic_texture_synthesis/target/fur.mp4" synthesized="dynamic_texture_synthesis/output/fur.mp4" %}
+          {% include texture_comparison.html name="grass_1" target="dynamic_texture_synthesis/target/grass_1.mp4" synthesized="dynamic_texture_synthesis/output/grass_1.mp4" %}
+          {% include texture_comparison.html name="grass_2" target="dynamic_texture_synthesis/target/grass_2.mp4" synthesized="dynamic_texture_synthesis/output/grass_2.mp4" %}
+          {% include texture_comparison.html name="grass_3" target="dynamic_texture_synthesis/target/grass_3.mp4" synthesized="dynamic_texture_synthesis/output/grass_3.mp4" %}
+          {% include texture_comparison.html name="ink" target="dynamic_texture_synthesis/target/ink.mp4" synthesized="dynamic_texture_synthesis/output/ink.mp4" %}
+          {% include texture_comparison.html name="lava" target="dynamic_texture_synthesis/target/lava.mp4" synthesized="dynamic_texture_synthesis/output/lava.mp4" %}
+          {% include texture_comparison.html name="plants" target="dynamic_texture_synthesis/target/plants.mp4" synthesized="dynamic_texture_synthesis/output/plants.mp4" %}
+          {% include texture_comparison.html name="sea_1" target="dynamic_texture_synthesis/target/sea_1.mp4" synthesized="dynamic_texture_synthesis/output/sea_1.mp4" %}
+          {% include texture_comparison.html name="sea_2" target="dynamic_texture_synthesis/target/sea_2.mp4" synthesized="dynamic_texture_synthesis/output/sea_2.mp4" %}
+          {% include texture_comparison.html name="sea_3" target="dynamic_texture_synthesis/target/sea_3.mp4" synthesized="dynamic_texture_synthesis/output/sea_3.mp4" %}
+          {% include texture_comparison.html name="sea_4" target="dynamic_texture_synthesis/target/sea_4.mp4" synthesized="dynamic_texture_synthesis/output/sea_4.mp4" %}
+          {% include texture_comparison.html name="shiny_circles" target="dynamic_texture_synthesis/target/shiny_circles.mp4" synthesized="dynamic_texture_synthesis/output/shiny_circles.mp4" %}
+          {% include texture_comparison.html name="shower_water_1" target="dynamic_texture_synthesis/target/shower_water_1.mp4" synthesized="dynamic_texture_synthesis/output/shower_water_1.mp4" %}
+          {% include texture_comparison.html name="sky_clouds_1" target="dynamic_texture_synthesis/target/sky_clouds_1.mp4" synthesized="dynamic_texture_synthesis/output/sky_clouds_1.mp4" %}
+          {% include texture_comparison.html name="sky_clouds_2" target="dynamic_texture_synthesis/target/sky_clouds_2.mp4" synthesized="dynamic_texture_synthesis/output/sky_clouds_2.mp4" %}
+          {% include texture_comparison.html name="smoke_1" target="dynamic_texture_synthesis/target/smoke_1.mp4" synthesized="dynamic_texture_synthesis/output/smoke_1.mp4" %}
+          {% include texture_comparison.html name="smoke_2" target="dynamic_texture_synthesis/target/smoke_2.mp4" synthesized="dynamic_texture_synthesis/output/smoke_2.mp4" %}
+          {% include texture_comparison.html name="smoke_3" target="dynamic_texture_synthesis/target/smoke_3.mp4" synthesized="dynamic_texture_synthesis/output/smoke_3.mp4" %}
+          {% include texture_comparison.html name="smoke_plume_1" target="dynamic_texture_synthesis/target/smoke_plume_1.mp4" synthesized="dynamic_texture_synthesis/output/smoke_plume_1.mp4" %}
+          {% include texture_comparison.html name="snake_1" target="dynamic_texture_synthesis/target/snake_1.mp4" synthesized="dynamic_texture_synthesis/output/snake_1.mp4" %}
+          {% include texture_comparison.html name="snake_2" target="dynamic_texture_synthesis/target/snake_2.mp4" synthesized="dynamic_texture_synthesis/output/snake_2.mp4" %}
+          {% include texture_comparison.html name="snake_3" target="dynamic_texture_synthesis/target/snake_3.mp4" synthesized="dynamic_texture_synthesis/output/snake_3.mp4" %}
+          {% include texture_comparison.html name="snake_4" target="dynamic_texture_synthesis/target/snake_4.mp4" synthesized="dynamic_texture_synthesis/output/snake_4.mp4" %}
+          {% include texture_comparison.html name="snake_5" target="dynamic_texture_synthesis/target/snake_5.mp4" synthesized="dynamic_texture_synthesis/output/snake_5.mp4" %}
+          {% include texture_comparison.html name="tv_static" target="dynamic_texture_synthesis/target/tv_static.mp4" synthesized="dynamic_texture_synthesis/output/tv_static.mp4" %}
+          {% include texture_comparison.html name="underwater_vegetation_1" target="dynamic_texture_synthesis/target/underwater_vegetation_1.mp4" synthesized="dynamic_texture_synthesis/output/underwater_vegetation_1.mp4" %}
+          {% include texture_comparison.html name="water_1" target="dynamic_texture_synthesis/target/water_1.mp4" synthesized="dynamic_texture_synthesis/output/water_1.mp4" %}
+          {% include texture_comparison.html name="water_2" target="dynamic_texture_synthesis/target/water_2.mp4" synthesized="dynamic_texture_synthesis/output/water_2.mp4" %}
+          {% include texture_comparison.html name="water_3" target="dynamic_texture_synthesis/target/water_3.mp4" synthesized="dynamic_texture_synthesis/output/water_3.mp4" %}
+          {% include texture_comparison.html name="water_4" target="dynamic_texture_synthesis/target/water_4.mp4" synthesized="dynamic_texture_synthesis/output/water_4.mp4" %}
+          {% include texture_comparison.html name="water_5" target="dynamic_texture_synthesis/target/water_5.mp4" synthesized="dynamic_texture_synthesis/output/water_5.mp4" %}
+          {% include texture_comparison.html name="waterfall" target="dynamic_texture_synthesis/target/waterfall.mp4" synthesized="dynamic_texture_synthesis/output/waterfall.mp4" %}
+          {% include texture_comparison.html name="waterfall_2" target="dynamic_texture_synthesis/target/waterfall_2.mp4" synthesized="dynamic_texture_synthesis/output/waterfall_2.mp4" %}
         </pre>
       </div>
     </div>
@@ -106,34 +110,33 @@ layout: default
       <p>The top row consists of the target dynamic textures while the bottom row consists of the synthesized textures.</p>
       <div class="highlighter-rouge">
         <pre class="highlight wrapper texture-wrapper">
-          {% include texture_comparison.html name="fish" target="dynamic_texture_synthesis/target/fish.mp4" synthesized="spatialonly_synthesis/fish_spatialonly.mp4" %}
-          {% include texture_comparison.html name="sea_2" target="dynamic_texture_synthesis/target/sea_2.mp4" synthesized="spatialonly_synthesis/sea_2_spatialonly.mp4" %}
+          {% include texture_comparison.html name="fish" target="dynamic_texture_synthesis/target/fish.mp4" synthesized="appearance_stream_only/fish.mp4" %}
         </pre>
       </div>
     </div>
     <div class="wrapper extdyntex-wrapper">
-      <h2 class="header extdyntex-header">Extended Dynamic Texture Synthesis</h2>
-      <p>Dynamic textures generated by incremental synthesis. We start by synthesizing a dynamic texture (12 frames in our experiments), then we take the final frame and use it to initialize the first frame of another sequence to be synthesized. This process is repeated multiple times as desired. Finally, the synthesized dynamic textures are (manually) stitched together, resulting in an extended dynamic texture.</p>
-      <p>The top row consists of the target dynamic textures while the bottom row consists of the synthesized dynamic textures, which are 120 frames long.</p>
+      <h2 class="header extdyntex-header">Incremental Synthesis</h2>
+      <p>Dynamic textures generated by incremental synthesis. Long sequences can be incrementally generated by separating the sequence into sub- sequences and optimizing them sequentially. This is realized by initializing the first frame of a subsequence as the last frame from the previous subsequence and keeping it fixed throughout the optimization. The remaining frames of the subsequence are initialized randomly and optimized as usual.</p>
+      <p>The top row consists of the target dynamic textures while the bottom row consists of the synthesized dynamic textures.</p>
       <div class="highlighter-rouge">
         <pre class="highlight wrapper texture-wrapper">
-          {% include texture_comparison.html name="calm_water_4" target="dynamic_texture_synthesis/target/calm_water_4.mp4" synthesized="extended_dynamic_texture_synthesis/calm_water_4_extended.mp4" %}
-          {% include texture_comparison.html name="calm_water_5" target="dynamic_texture_synthesis/target/calm_water_5.mp4" synthesized="extended_dynamic_texture_synthesis/calm_water_5_extended.mp4" %}
-          {% include texture_comparison.html name="candy_2" target="dynamic_texture_synthesis/target/candy_2.mp4" synthesized="dynamic_texture_synthesis/output/candy_2_output.mp4" %}
-          {% include texture_comparison.html name="flag" target="dynamic_texture_synthesis/target/flag.mp4" synthesized="extended_dynamic_texture_synthesis/flag_extended.mp4" %}
-          {% include texture_comparison.html name="sky_clouds_1" target="dynamic_texture_synthesis/target/sky_clouds_1.mp4" synthesized="extended_dynamic_texture_synthesis/sky_clouds_1_extended.mp4" %}
-          {% include texture_comparison.html name="smoke_1" target="dynamic_texture_synthesis/target/smoke_1.mp4" synthesized="extended_dynamic_texture_synthesis/smoke_1_extended.mp4" %}
-          {% include texture_comparison.html name="water_5" target="dynamic_texture_synthesis/target/water_5.mp4" synthesized="extended_dynamic_texture_synthesis/water_5_extended.mp4" %}
+          {% include texture_comparison.html name="calm_water_4" target="dynamic_texture_synthesis/target/calm_water_4.mp4" synthesized="incrementally_generated/calm_water_4.mp4" %}
+          {% include texture_comparison.html name="calm_water_5" target="dynamic_texture_synthesis/target/calm_water_5.mp4" synthesized="incrementally_generated/calm_water_5.mp4" %}
+          {% include texture_comparison.html name="fish" target="dynamic_texture_synthesis/target/fish.mp4" synthesized="incrementally_generated/fish.mp4" %}
+          {% include texture_comparison.html name="flag" target="dynamic_texture_synthesis/target/flag.mp4" synthesized="incrementally_generated/flag.mp4" %}
+          {% include texture_comparison.html name="sky_clouds_1" target="dynamic_texture_synthesis/target/sky_clouds_1.mp4" synthesized="incrementally_generated/sky_clouds_1.mp4" %}
+          {% include texture_comparison.html name="smoke_1" target="dynamic_texture_synthesis/target/smoke_1.mp4" synthesized="incrementally_generated/smoke_1.mp4" %}
+          {% include texture_comparison.html name="water_5" target="dynamic_texture_synthesis/target/water_5.mp4" synthesized="incrementally_generated/water_5.mp4" %}
         </pre>
       </div>
     </div>
     <div class="wrapper inftex-wrapper">
-      <h2 class="header inftex-header">"Infinite Textures"</h2>
+      <h2 class="header inftex-header">Temporally-endless Textures</h2>
       <p>An interesting extension that we briefly explored are textures where there is no discernible temporal seam between the last and first frames. Played as a loop, these textures appear to be temporally endless. This is trivially achieved by adding an additional loss to the dynamics stream that ties the last frame to the first.</p>
       <p>The top row consists of the target dynamic texture while the bottom row consists of the synthesized "infinite" dynamic texture.</p>
       <div class="highlighter-rouge">
         <pre class="highlighter wrapper texture-wrapper">
-          {% include texture_comparison.html name="smoke_plume_1" target="dynamic_texture_synthesis/target/smoke_plume_1.mp4" synthesized="infinite_dynamic_texture_synthesis/smoke_plume_1_infinite.mp4" %}
+          {% include texture_comparison.html name="smoke_plume_1" target="dynamic_texture_synthesis/target/smoke_plume_1.mp4" synthesized="temporally_endless/smoke_plume_1.mp4" %}
         </pre>
       </div>
     </div>
@@ -144,7 +147,6 @@ knowledge, we are the first to demonstrate this form of style transfer.</p>
       <p>The top row consists of the appearance target, the second row the dynamics target, and the third row the synthesized result.</p>
       <div class="highlighter-rouge">
         <pre class="highlighter wrapper texture-wrapper">
-          {% include dynamics_style_transfer_1.html name="calm_water_3_to_water_paint_1" appearance_target="water_paint_1.jpeg" dynamics_target="dynamic_texture_synthesis/target/calm_water_3.mp4" synthesized="dynamics_style_transfer/1/calm_water_3_to_water_paint_1.mp4" dynamics_target_poster="img/posters/calm_water_3.jpeg" synthesized_poster="img/posters/calm_water_3_to_water_paint_1.jpeg" %}
           {% include dynamics_style_transfer_1.html name="fireplace_1_to_fire_paint" appearance_target="fire_paint.jpeg" dynamics_target="dynamic_texture_synthesis/target/fireplace_1.mp4" synthesized="dynamics_style_transfer/1/fireplace_1_to_fire_paint.mp4" dynamics_target_poster="img/posters/fireplace_1.jpeg" synthesized_poster="img/posters/fireplace_1_to_fire_paint.jpeg" %}
           {% include dynamics_style_transfer_1.html name="flag_2_to_flag_cropped_1" appearance_target="flag_cropped_1.jpeg" dynamics_target="dynamic_texture_synthesis/target/flag_2.mp4" synthesized="dynamics_style_transfer/1/flag_2_to_flag_cropped_1.mp4" dynamics_target_poster="img/posters/flag_2.jpeg" synthesized_poster="img/posters/flag_2_to_flag_cropped_1.jpeg" %}
           {% include dynamics_style_transfer_1.html name="flag_2_to_flag_cropped_2" appearance_target="flag_cropped_2.jpeg" dynamics_target="dynamic_texture_synthesis/target/flag_2.mp4" synthesized="dynamics_style_transfer/1/flag_2_to_flag_cropped_2.mp4" dynamics_target_poster="img/posters/flag_2.jpeg" synthesized_poster="img/posters/flag_2_to_flag_cropped_2.jpeg" %}
@@ -154,9 +156,8 @@ knowledge, we are the first to demonstrate this form of style transfer.</p>
       <p>Portions of images can be animated.</p>
       <div class="highlighter-rouge">
         <pre class="highlighter wrapper texture-wrapper">
-          {% include dynamics_style_transfer_2.html name="waterfall_to_waterfall_paint" appearance_target="waterfall_paint_cropped.jpeg" dynamics_target="dynamic_texture_synthesis/target/waterfall.mp4" synthesized="dynamics_style_transfer/2/waterfall_to_waterfall_paint_cropped.mp4" pasted="dynamics_style_transfer/2/waterfall_to_waterfall_paint.mp4" dynamics_target_poster="img/posters/waterfall.jpeg" synthesized_poster="img/posters/waterfall_to_waterfall_paint_cropped.jpeg" pasted_poster="img/posters/waterfall_to_waterfall_paint.jpeg" %}
-          {% include dynamics_style_transfer_2.html name="water_4_to_water_paint_2" appearance_target="water_paint_2_cropped.jpeg" dynamics_target="dynamic_texture_synthesis/target/water_4.mp4" synthesized="dynamics_style_transfer/2/water_4_to_water_paint_2_cropped.mp4" pasted="dynamics_style_transfer/2/water_4_to_water_paint_2.mp4" dynamics_target_poster="img/posters/water_4.jpeg" synthesized_poster="img/posters/water_4_to_water_paint_2_cropped.jpeg" pasted_poster="img/posters/water_4_to_water_paint_2.jpeg" %}
-          {% include dynamics_style_transfer_2.html name="sky_clouds_2_to_sky_clouds_paint" appearance_target="sky_clouds_paint_cropped.jpeg" dynamics_target="dynamic_texture_synthesis/target/sky_clouds_2.mp4" synthesized="dynamics_style_transfer/2/sky_clouds_2_to_sky_clouds_paint_cropped.mp4" pasted="dynamics_style_transfer/2/sky_clouds_2_to_sky_clouds_paint.mp4" dynamics_target_poster="img/posters/sky_clouds_2.jpeg" synthesized_poster="img/posters/sky_clouds_2_to_sky_clouds_paint_cropped.jpeg" pasted_poster="img/posters/sky_clouds_2_to_sky_clouds_paint.jpeg" %}
+          {% include dynamics_style_transfer_2.html name="waterfall_to_waterfall_paint" appearance_target="waterfall_paint.jpeg" dynamics_target="dynamic_texture_synthesis/target/waterfall.mp4" synthesized="dynamics_style_transfer/2/waterfall_to_waterfall_paint.mp4" pasted="dynamics_style_transfer/2/waterfall_to_waterfall_paint_final.mp4" dynamics_target_poster="img/posters/waterfall.jpeg" synthesized_poster="img/posters/waterfall_to_waterfall_paint.jpeg" pasted_poster="img/posters/waterfall_to_waterfall_paint_final.jpeg" %}
+          {% include dynamics_style_transfer_2.html name="water_4_to_water_paint" appearance_target="water_paint.jpeg" dynamics_target="dynamic_texture_synthesis/target/water_4.mp4" synthesized="dynamics_style_transfer/2/water_4_to_water_paint.mp4" pasted="dynamics_style_transfer/2/water_4_to_water_paint_final.mp4" dynamics_target_poster="img/posters/water_4.jpeg" synthesized_poster="img/posters/water_4_to_water_paint.jpeg" pasted_poster="img/posters/water_4_to_water_paint_final.jpeg" %}
         </pre>
       </div>
     </div>
